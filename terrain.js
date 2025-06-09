@@ -39,9 +39,9 @@ export function createTerrain() {
 
         // Add noise for terrain height
         const quality = 1.5;
-        let h = noise.perlin(x / 60 * quality, z / 60 * quality) * 15;
-        h += noise.perlin(x / 25 * quality, z / 25 * quality) * 8;
-        h += noise.perlin(x / 10 * quality, z / 10 * quality) * 3;
+        let h = noise.noise(x / 60 * quality, z / 60 * quality, 0) * 15;
+        h += noise.noise(x / 25 * quality, z / 25 * quality, 0) * 8;
+        h += noise.noise(x / 10 * quality, z / 10 * quality, 0) * 3;
         
         y += h;
 
@@ -95,4 +95,3 @@ export function createTerrain() {
     
     return mesh;
 }
-
