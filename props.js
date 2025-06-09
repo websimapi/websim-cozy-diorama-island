@@ -31,8 +31,8 @@ function createTree(x, y, z) {
 
 export function createTrees(terrainMesh) {
     const trees = new THREE.Group();
-    const treeCount = 150;
-    const placementArea = { x: 140, z: 190 };
+    const treeCount = 600;
+    const placementArea = { x: 290, z: 390 };
     const grassLevel = 7;
     const rockLevel = 20;
     const riverWidth = 8;
@@ -74,8 +74,8 @@ function createRock(x, y, z) {
 
 export function createRocks(terrainMesh) {
     const rocks = new THREE.Group();
-    const rockCount = 100;
-    const placementArea = { x: 140, z: 190 };
+    const rockCount = 400;
+    const placementArea = { x: 290, z: 390 };
     const riverWidth = 8;
     const grassLevel = 7;
     const rockLevel = 20;
@@ -105,4 +105,3 @@ export function createRocks(terrainMesh) {
     }
     return rocks;
 }
-
