@@ -2,10 +2,10 @@ import * as THREE from 'three';
 import { ImprovedNoise } from 'three/addons/math/ImprovedNoise.js';
 
 export function createTerrain() {
-    const width = 300;
-    const height = 400;
-    const widthSegments = 160;
-    const heightSegments = 200;
+    const width = 500;
+    const height = 600;
+    const widthSegments = 250;
+    const heightSegments = 300;
 
     const geometry = new THREE.PlaneGeometry(width, height, widthSegments, heightSegments);
     geometry.rotateX(-Math.PI / 2);
@@ -34,14 +34,14 @@ export function createTerrain() {
         const z = positions.getZ(i);
 
         // Cylindrical curve
-        const curveFactor = 0.001;
+        const curveFactor = 0.0004;
         let y = - (x * x * curveFactor);
 
         // Add noise for terrain height
         const quality = 1.5;
-        let h = noise.noise(x / 120 * quality, z / 120 * quality, 0) * 15;
-        h += noise.noise(x / 50 * quality, z / 50 * quality, 0) * 8;
-        h += noise.noise(x / 20 * quality, z / 20 * quality, 0) * 3;
+        let h = noise.noise(x / 200 * quality, z / 200 * quality, 0) * 15;
+        h += noise.noise(x / 80 * quality, z / 80 * quality, 0) * 8;
+        h += noise.noise(x / 30 * quality, z / 30 * quality, 0) * 3;
         
         y += h;
 

@@ -9,11 +9,11 @@ function init() {
     // Scene setup
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x87CEEB);
-    scene.fog = new THREE.Fog(0x87CEEB, 200, 600);
+    scene.fog = new THREE.Fog(0x87CEEB, 400, 1200);
 
     // Camera setup
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 80, 250);
+    camera.position.set(0, 120, 400);
 
     // Renderer setup
     renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -30,7 +30,7 @@ function init() {
     controls.target.set(0, 20, 0);
     controls.maxPolarAngle = Math.PI / 2.2;
     controls.minDistance = 80;
-    controls.maxDistance = 400;
+    controls.maxDistance = 800;
     controls.enableDamping = true;
 
     // Lighting
@@ -41,10 +41,10 @@ function init() {
     const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
     dirLight.position.set(-30, 50, -30);
     dirLight.castShadow = true;
-    dirLight.shadow.camera.top = 250;
-    dirLight.shadow.camera.bottom = -250;
-    dirLight.shadow.camera.left = -250;
-    dirLight.shadow.camera.right = 250;
+    dirLight.shadow.camera.top = 310;
+    dirLight.shadow.camera.bottom = -310;
+    dirLight.shadow.camera.left = -260;
+    dirLight.shadow.camera.right = 260;
     dirLight.shadow.camera.near = 0.1;
     dirLight.shadow.camera.far = 500;
     dirLight.shadow.mapSize.width = 4096;
@@ -63,7 +63,7 @@ function init() {
     scene.add(rocks);
 
     // Water
-    const waterGeometry = new THREE.PlaneGeometry(1000, 1000, 50, 50);
+    const waterGeometry = new THREE.PlaneGeometry(1000, 1000, 100, 100);
     const waterMaterial = new THREE.MeshStandardMaterial({
         color: 0x60A3D9,
         transparent: true,
